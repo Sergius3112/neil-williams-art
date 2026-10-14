@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neil Francis Williams — Contemporary Painting, Manchester</title>
+<meta name="description" content="Neil Francis Williams is an abstract painter based in Manchester. Salford Art College trained, with work shown across Liverpool, Salford and Bolton.">
+<meta property="og:title" content="Neil Francis Williams — Contemporary Painting">
+<meta property="og:description" content="Abstract oil painting from Manchester. Landscape, weather and light.">
+<meta property="og:image" content="images/tree.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* mossy green palette */
+  --bone:#dee3d1;        /* page ground — soft moss */
+  --bone-deep:#d2d8c1;   /* alternating sections */
+  --ink:#1e2418;         /* deep forest, near-black */
+  --ink-soft:#4a5240;
+  --ink-faint:#7a8270;
+  --ochre:#9a6526;       /* warm accent, picked from the paintings */
+  --rule:#c2c9ae;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bone);color:var(--ink);
+  font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+
+/* ---------- header ---------- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  padding:22px 40px;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .45s ease,padding .45s ease,box-shadow .45s ease,color .45s ease;
+  color:#fff;
+}
+header.solid{
+  background:rgba(222,227,209,.94);
+  backdrop-filter:blur(10px);
+  color:var(--ink);
+  padding:14px 40px;
+  box-shadow:0 1px 0 var(--rule);
+}
+.brand{
+  font-family:var(--serif);font-size:20px;letter-spacing:.22em;
+  text-transform:uppercase;text-decoration:none;white-space:nowrap;
+}
+.brand small{
+  display:block;font-family:var(--sans);font-size:9.5px;letter-spacing:.34em;
+  opacity:.72;margin-top:3px;font-weight:400;
+}
+nav ul{display:flex;gap:34px;list-style:none;margin:0;padding:0}
+nav a{
+  text-decoration:none;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;
+  padding-bottom:4px;border-bottom:1px solid transparent;transition:border-color .3s,opacity .3s;
+}
+nav a:hover,nav a.active{border-bottom-color:currentColor}
+.menu-btn{display:none;background:none;border:0;color:inherit;font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;cursor:pointer;font-family:var(--sans)}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;height:100vh;min-height:560px;overflow:hidden;
+  display:flex;align-items:flex-end;
+}
+.hero img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transform:scale(1.06);animation:drift 26s ease-in-out infinite alternate;
+}
+@keyframes drift{from{transform:scale(1.06) translate3d(0,0,0)}to{transform:scale(1.14) translate3d(-2%,-1%,0)}}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(18,22,15,.44) 0%,rgba(18,22,15,.06) 38%,rgba(18,22,15,.66) 100%);
+}
+.hero-inner{position:relative;z-index:2;padding:0 40px 82px;color:#fff;max-width:var(--max)}
+.hero h1{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(2.6rem,7vw,5.6rem);line-height:1.02;letter-spacing:.01em;margin:0 0 18px;
+  text-shadow:0 2px 30px rgba(0,0,0,.35);
+}
+.hero p{
+  max-width:44ch;font-size:15px;letter-spacing:.02em;margin:0 0 26px;
+  color:rgba(255,255,255,.9);text-shadow:0 1px 14px rgba(0,0,0,.4);
+}
+.hero .rule{width:64px;height:1px;background:rgba(255,255,255,.6);margin-bottom:26px}
+.scroll-cue{
+  position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;
+  color:rgba(255,255,255,.8);font-size:10px;letter-spacing:.3em;text-transform:uppercase;
+  text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:10px;
+}
+.scroll-cue span{display:block;width:1px;height:38px;background:rgba(255,255,255,.55);
+  animation:pulse 2.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.3;transform:scaleY(.5);transform-origin:top}50%{opacity:1;transform:scaleY(1)}}
+
+/* ---------- layout ---------- */
+section{padding:120px 40px}
+.wrap{max-width:var(--max);margin:0 auto}
+.eyebrow{
+  font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--ochre);
+  margin:0 0 18px;font-weight:400;
+}
+h2{
+  font-family:var(--serif);font-weight:300;font-size:clamp(2rem,4vw,3.1rem);
+  line-height:1.12;margin:0 0 28px;letter-spacing:.005em;
+}
+h3{font-family:var(--serif);font-weight:400;font-size:1.5rem;margin:0 0 6px;letter-spacing:.01em}
+.lede{font-size:19px;line-height:1.72;color:var(--ink-soft);max-width:62ch}
+.hairline{height:1px;background:var(--rule);border:0;margin:0}
+
+/* ---------- statement ---------- */
+.statement{padding-top:130px;padding-bottom:110px}
+.statement .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.45fr);gap:72px;align-items:start}
+.statement blockquote{
+  margin:0;font-family:var(--serif);font-style:italic;font-weight:300;
+  font-size:clamp(1.5rem,2.6vw,2.15rem);line-height:1.4;color:var(--ink);
+}
+.statement blockquote::before{content:"“";color:var(--ochre);opacity:.5}
+.statement blockquote::after{content:"”";color:var(--ochre);opacity:.5}
+
+/* ---------- work ---------- */
+.work{background:var(--bone-deep);}
+.work-head{display:flex;justify-content:space-between;align-items:flex-end;
+  gap:30px;flex-wrap:wrap;margin-bottom:64px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:64px 56px}
+figure{margin:0}
+.frame{
+  background:#f5f7ef;padding:16px;
+  box-shadow:0 1px 2px rgba(30,36,24,.10),0 18px 46px -22px rgba(30,36,24,.40);
+  cursor:zoom-in;overflow:hidden;
+}
+.frame img{width:100%;transition:transform 1s cubic-bezier(.2,.7,.2,1),filter .6s}
+.frame:hover img{transform:scale(1.035)}
+figcaption{margin-top:20px}
+figcaption .meta{font-size:13px;color:var(--ink-faint);letter-spacing:.04em}
+figcaption .price{margin-top:8px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ochre)}
+
+/* ---------- in situ ---------- */
+.insitu{padding:0}
+.insitu-grid{display:grid;grid-template-columns:1.25fr 1fr}
+.insitu-grid img{width:100%;height:100%;object-fit:cover;min-height:340px}
+.insitu-note{
+  padding:70px 48px;background:var(--ink);color:var(--bone);
+  display:flex;flex-direction:column;justify-content:center;
+}
+.insitu-note .eyebrow{color:#c99553}
+.insitu-note h2{color:var(--bone);margin-bottom:18px}
+.insitu-note p{color:rgba(222,227,209,.74);margin:0;max-width:40ch;font-size:16px}
+
+/* ---------- biography ---------- */
+.bio .wrap{display:grid;grid-template-columns:1fr 1.35fr;gap:80px;align-items:start}
+.bio-portrait .frame{cursor:default}
+.bio p{color:var(--ink-soft);max-width:60ch}
+.bio p strong{color:var(--ink);font-weight:500}
+.facts{list-style:none;margin:44px 0 0;padding:34px 0 0;border-top:1px solid var(--rule)}
+.facts li{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:11px 0;font-size:15px}
+.facts span{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint);
+  padding-top:5px}
+
+/* ---------- exhibited ---------- */
+.places{background:var(--bone-deep);text-align:center;padding:84px 40px}
+.places ul{list-style:none;margin:26px 0 0;padding:0;display:flex;justify-content:center;
+  gap:56px;flex-wrap:wrap}
+.places li{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2.2rem);color:var(--ink-soft);
+  font-weight:300;letter-spacing:.03em}
+
+/* ---------- contact ---------- */
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.contact a.link{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule);
+  transition:border-color .3s}
+.contact a.link:hover{border-bottom-color:var(--ochre)}
+.detail{margin:0 0 26px}
+.detail span{display:block;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--ink-faint);margin-bottom:5px}
+form{display:grid;gap:20px}
+label{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint);
+  display:block;margin-bottom:8px}
+input,textarea{
+  width:100%;background:transparent;border:0;border-bottom:1px solid var(--rule);
+  padding:9px 0;font-family:var(--sans);font-size:16px;font-weight:300;color:var(--ink);
+  transition:border-color .3s;
+}
+input:focus,textarea:focus{outline:0;border-bottom-color:var(--ochre)}
+textarea{resize:vertical;min-height:96px}
+button.send{
+  justify-self:start;margin-top:12px;background:var(--ink);color:var(--bone);border:0;
+  padding:15px 40px;font-family:var(--sans);font-size:11px;letter-spacing:.24em;
+  text-transform:uppercase;cursor:pointer;transition:background .3s,transform .3s;
+}
+button.send:hover{background:var(--ochre);transform:translateY(-1px)}
+.formnote{font-size:12.5px;color:var(--ink-faint);margin:0}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink);color:rgba(222,227,209,.64);padding:56px 40px;font-size:12.5px}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+footer a{color:rgba(222,227,209,.64);text-decoration:none}
+footer a:hover{color:var(--bone)}
+.f-brand{font-family:var(--serif);font-size:15px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--bone)}
+
+/* ---------- lightbox ---------- */
+.lightbox{
+  position:fixed;inset:0;z-index:100;background:rgba(18,22,15,.95);
+  display:none;align-items:center;justify-content:center;padding:5vh 5vw;cursor:zoom-out;
+}
+.lightbox.open{display:flex}
+.lightbox img{max-width:100%;max-height:86vh;box-shadow:0 30px 90px -20px rgba(0,0,0,.8)}
+.lightbox .cap{position:absolute;bottom:26px;left:0;right:0;text-align:center;
+  color:rgba(222,227,209,.78);font-size:12.5px;letter-spacing:.1em}
+.lightbox .close{position:absolute;top:24px;right:32px;color:rgba(222,227,209,.78);
+  font-size:26px;line-height:1;background:none;border:0;cursor:pointer}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- responsive ---------- */
+@media(max-width:900px){
+  section{padding:84px 24px}
+  header{padding:18px 24px}
+  header.solid{padding:12px 24px}
+  .hero-inner{padding:0 24px 64px}
+  .menu-btn{display:block}
+  nav{
+    position:fixed;inset:0;background:var(--bone);color:var(--ink);
+    display:flex;align-items:center;justify-content:center;
+    opacity:0;pointer-events:none;transition:opacity .4s;
+  }
+  nav.open{opacity:1;pointer-events:auto}
+  nav ul{flex-direction:column;gap:30px;text-align:center}
+  nav a{font-size:15px;letter-spacing:.24em}
+  .statement .wrap,.bio .wrap,.contact .wrap{grid-template-columns:1fr;gap:44px}
+  .grid{grid-template-columns:1fr;gap:56px}
+  .insitu-grid{grid-template-columns:1fr}
+  .insitu-note{padding:56px 24px}
+  .facts li{grid-template-columns:1fr;gap:2px}
+  .places ul{gap:28px}
+}
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <a class="brand" href="#top">Neil Francis Williams<small>Contemporary Painting</small></a>
+  <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav id="nav">
+    <ul>
+      <li><a href="#top">Home</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#biography">Biography</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<div class="hero" id="top">
+  <img src="images/hero.jpg" alt="Detail from a painting by Neil Francis Williams — bare tree against a burning sky">
+  <div class="hero-inner">
+    <div class="rule"></div>
+    <h1>Weather, light<br>and the northern<br>landscape.</h1>
+    <p>Original oil paintings by Neil Francis Williams. Made in Manchester, shown across Liverpool, Salford and Bolton.</p>
+  </div>
+  <a class="scroll-cue" href="#statement">View<span></span></a>
+</div>
+
+<!-- ============ STATEMENT ============ -->
+<section class="statement" id="statement">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">The Painter</p>
+      <h2>Neil Francis<br>Williams</h2>
+    </div>
+    <div class="reveal">
+      <blockquote>I received formal art training at Salford Art College.</blockquote>
+      <p class="lede" style="margin-top:30px">
+        Williams paints abstracted landscape — moorland, estuary and open sky — worked in oil
+        with a heavy, weathered surface. Skies break apart mid-canvas; a single tree or a low
+        headland holds the ground. The palette is northern: ochre, rust, slate and bone.
+      </p>
+    </div>
+  </div>
+</section>
+
+<hr class="hairline">
+
+<!-- ============ WORK ============ -->
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="work-head reveal">
+      <div>
+        <p class="eyebrow">Selected Work</p>
+        <h2 style="margin:0">Paintings</h2>
+      </div>
+      <p style="max-width:36ch;margin:0;color:var(--ink-soft);font-size:15px">
+        Original oils on canvas. Each piece is one of one. Enquire for dimensions,
+        availability and delivery.
+      </p>
+    </div>
+
+    <div class="grid">
+      <figure class="reveal">
+        <div class="frame" data-full="images/tree.jpg" data-cap="Untitled (Tree Study) — oil on canvas">
+          <img src="images/tree.jpg" alt="Abstract oil painting of a bare tree in a misty valley, rust and ochre sky">
+        </div>
+        <figcaption>
+          <h3>Untitled (Tree Study)</h3>
+          <p class="meta">Oil on canvas · Dimensions on request</p>
+          <p class="price">Enquire</p>
+        </figcaption>
+      </figure>
+
+      <figure class="reveal">
+        <div class="frame" data-full="images/coast.jpg" data-cap="Untitled (Coastal Storm) — oil on canvas, framed">
+          <img src="images/coast.jpg" alt="Abstract oil painting of a storm breaking over a pale estuary and low headland">
+        </div>
+        <figcaption>
+          <h3>Untitled (Coastal Storm)</h3>
+          <p class="meta">Oil on canvas, framed · Dimensions on request</p>
+          <p class="price">Enquire</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IN SITU ============ -->
+<section class="insitu">
+  <div class="insitu-grid">
+    <img src="images/insitu-living.jpg" alt="Tree painting hung above a walnut sideboard in a warm, plastered living room">
+    <div class="insitu-note">
+      <p class="eyebrow">In Situ</p>
+      <h2>Made for the wall<br>you live with.</h2>
+      <p>Large-format canvases carry a room. Send a photograph of your space and Neil will
+      advise on scale, framing and hanging.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BIOGRAPHY ============ -->
+<section class="bio" id="biography">
+  <div class="wrap">
+    <div class="bio-portrait reveal">
+      <div class="frame">
+        <img src="images/insitu-gallery.jpg" alt="A framed Neil Francis Williams painting on a gallery wall">
+      </div>
+    </div>
+    <div class="reveal">
+      <p class="eyebrow">Biography</p>
+      <h2>A Salford training,<br>a working life,<br>and the paint.</h2>
+      <p>
+        Neil Francis Williams is a painter based in Manchester. He received formal art training
+        at <strong>Salford Art College</strong>, and later worked for an advertising agency where
+        his skill base was considerably enhanced.
+      </p>
+      <p>
+        For most of his working life he was a <strong>central heating engineer</strong> in the
+        Salford area — a trade that kept him outdoors and moving through the landscape he now
+        paints. He was a good friend of the artist <strong>Charles Jones</strong>, a respected
+        Salford painter and an additional influence on his work.
+      </p>
+      <p>
+        Away from the studio he fishes: long, still hours on the water that have a clear echo in
+        the estuaries, weather fronts and low horizons of the paintings.
+      </p>
+      <p>
+        His work has been presented across <strong>Liverpool, Salford and Bolton</strong>.
+      </p>
+
+      <ul class="facts">
+        <li><span>Based</span><div>Manchester, United Kingdom</div></li>
+        <li><span>Training</span><div>Salford Art College</div></li>
+        <li><span>Medium</span><div>Oil on canvas</div></li>
+        <li><span>Influences</span><div>Charles Jones; the northern landscape</div></li>
+        <li><span>Shown in</span><div>Liverpool · Salford · Bolton</div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLACES ============ -->
+<section class="places">
+  <p class="eyebrow" style="margin-bottom:4px">Presented in</p>
+  <ul>
+    <li>Liverpool</li>
+    <li>Salford</li>
+    <li>Bolton</li>
+  </ul>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">Contact</p>
+      <h2>Enquiries<br>and commissions.</h2>
+      <p class="lede" style="margin-bottom:40px">
+        For availability, pricing, studio visits or commissions, get in touch directly.
+        Neil replies to all enquiries personally.
+      </p>
+
+      <!-- PLACEHOLDERS: replace the details below with Neil's real contact information -->
+      <p class="detail"><span>Email</span>
+        <a class="link" href="mailto:hello@neilfranciswilliams.co.uk">hello@neilfranciswilliams.co.uk</a></p>
+      <p class="detail"><span>Telephone</span>
+        <a class="link" href="tel:+440000000000">+44 (0)000 000 0000</a></p>
+      <p class="detail"><span>Instagram</span>
+        <a class="link" href="https://instagram.com/" target="_blank" rel="noopener">@neilfranciswilliams</a></p>
+      <p class="detail"><span>Studio</span>Manchester, UK — visits by appointment</p>
+    </div>
+
+    <div class="reveal">
+      <form id="enquiry">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+        <div>
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" type="text" placeholder="Painting enquiry">
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button class="send" type="submit">Send Enquiry</button>
+        <p class="formnote">This form opens your email app. To receive enquiries directly on the
+        site, connect it to a form service such as Formspree.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="f-brand">Neil Francis Williams</div>
+      <div style="margin-top:6px">Original oil paintings · Manchester</div>
+    </div>
+    <div>
+      <a href="#work">Work</a> &nbsp;·&nbsp;
+      <a href="#biography">Biography</a> &nbsp;·&nbsp;
+      <a href="#contact">Contact</a>
+    </div>
+    <div>© <span id="yr"></span> Neil Francis Williams. All images copyright the artist.</div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Artwork viewer">
+  <button class="close" aria-label="Close">×</button>
+  <img alt="">
+  <div class="cap"></div>
+</div>
+
+<script>
+(function(){
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  /* header state */
+  var header = document.getElementById('site-header');
+  var hero   = document.querySelector('.hero');
+  function onScroll(){
+    var trigger = hero ? hero.offsetHeight - 90 : 80;
+    header.classList.toggle('solid', window.scrollY > trigger);
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* mobile nav */
+  var nav = document.getElementById('nav'), btn = document.getElementById('menuBtn');
+  function closeNav(){ nav.classList.remove('open'); btn.textContent='Menu'; btn.setAttribute('aria-expanded','false'); }
+  btn.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    btn.textContent = open ? 'Close' : 'Menu';
+    btn.setAttribute('aria-expanded', String(open));
+  });
+  nav.addEventListener('click', function(e){ if(e.target.tagName === 'A') closeNav(); });
+
+  /* active link */
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav a'));
+  var secs  = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY + window.innerHeight*0.35, best = 0;
+    secs.forEach(function(s,i){ if(s && s.offsetTop <= y) best = i; });
+    links.forEach(function(a,i){ a.classList.toggle('active', i === best); });
+  }, {passive:true});
+
+  /* reveal on scroll */
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* lightbox */
+  var lb = document.getElementById('lightbox'),
+      lbImg = lb.querySelector('img'),
+      lbCap = lb.querySelector('.cap');
+  document.querySelectorAll('.frame[data-full]').forEach(function(f){
+    f.addEventListener('click', function(){
+      lbImg.src = f.getAttribute('data-full');
+      lbImg.alt = f.querySelector('img').alt;
+      lbCap.textContent = f.getAttribute('data-cap') || '';
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  function closeLb(){ lb.classList.remove('open'); document.body.style.overflow = ''; }
+  lb.addEventListener('click', closeLb);
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLb(); });
+
+  /* enquiry form -> mailto (replace with a form service to receive on-site) */
+  document.getElementById('enquiry').addEventListener('submit', function(e){
+    e.preventDefault();
+    var el = e.target.elements;
+    var subject = el.subject.value || 'Painting enquiry';
+    var body = 'Name: ' + el.name.value + '\nEmail: ' + el.email.value + '\n\n' + el.message.value;
+    window.location.href = 'mailto:hello@neilfranciswilliams.co.uk'
+      + '?subject=' + encodeURIComponent(subject)
+      + '&body='   + encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
